@@ -32,7 +32,13 @@
 						// Success
 						$("#start-auth").hide();
 						$("#finish-auth").show();
-						$('#data-output').html("Output from token: "+res);
+						$('#data-output').html("<p style='color: darkgrey; font-size: 22px; margin-top:0;''>"+
+												"Data received from Yubico key by client<br>"+
+												"<br><b>keyHandle:</b><br>"+JSON.stringify(res.keyHandle)+
+												"<br><b>clientData:</b><br>"+JSON.stringify(res.clientData)+
+												"<br><b>signatureData:</b><br>"+JSON.stringify(res.signatureData)+
+												"<br><b>publicKey:</b><br>"+JSON.stringify(response.publicKey)
+												);
 					}
 					else {
 						// Fail
@@ -98,8 +104,10 @@
 	<div id="finish-auth" class="container">
 		<i class="material-icons" style="color: darkgrey; font-size: 100px; margin-bottom: 0px; margin-top:40px;">check</i>
 		<h4 style="color: green;">User authenticated!</h4>
-		<div id="data-output">
+
+		<div id="data-output" class="row center-align" style="background-color: #ECECEC; border-radius: 5px; padding: 15px 15px; margin-top: 40px; word-wrap: break-word;">
 		</div>
+
 		<a href="/" class="btn">Go back</a>
 	</div>
 
