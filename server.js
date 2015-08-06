@@ -274,7 +274,10 @@ router.post('/finish_authentication', function(req, res) {
 						// User is authenticated.
 						console.log("User authenticated")
 						console.log("checkres: "+JSON.stringify(checkres));
-						res.json({message: 'User authenticated', publicKey: user.publicKey, fData: fData});
+						res.json({message: 'User authenticated', 
+									publicKey: user.publicKey, 
+									fData: fData, 
+									checkres: JSON.stringify(checkres)});
 						res.end();
 
 					} else {
