@@ -38,7 +38,7 @@
 												"<br><b>keyHandle:</b><br>"+JSON.stringify(res.keyHandle)+
 												"<br><b>clientData:</b><br>"+JSON.stringify(res.clientData)+
 												"<br><b>signatureData:</b><br>"+JSON.stringify(res.signatureData)+
-												"<p style='color: darkgrey; font-size: 22px; margin:20px 0 0 0;'>"+
+												"<p style='color: darkgrey; font-size: 22px; margin:25px 0 0 0;'>"+
 												"Data received from server</p>"+
 												"<br><b>publicKey:</b><br>"+JSON.stringify(response.publicKey)+
 												"<br><b>counter:</b><br>"+response.checkres.counter+
@@ -109,11 +109,9 @@
 	<div id="finish-auth" class="container">
 		<i class="material-icons" style="color: darkgrey; font-size: 100px; margin-bottom: 0px; margin-top:40px;">check</i>
 		<h4 style="color: green;">User authenticated!</h4>
-
+		<a href="/" class="btn">Go back</a>
 		<div id="data-output" class="row center-align" style="background-color: #ECECEC; border-radius: 5px; padding: 15px 15px; margin-top: 40px; word-wrap: break-word;">
 		</div>
-
-		<a href="/" class="btn">Go back</a>
 	</div>
 
 	<div id="auth-fail" class="container">
