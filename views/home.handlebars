@@ -38,8 +38,8 @@
 			</div>
 
 			<div class="col s6">
-				<i class="material-icons" style="color: darkgrey; font-size: 40px; margin-bottom: 0px;">looks_two</i>
-				<p style="margin-top: 0; color: darkgrey; font-size: 25px; line-heigth: 40px; vertical-align: middle;"> Authenticate with the key.</p>
+				<i id="authenticated-icon" class="material-icons" style="color: darkgrey; font-size: 40px; margin-bottom: 0px;">looks_two</i>
+				<p id="authenticated-text" style="margin-top: 0; color: darkgrey; font-size: 25px; line-heigth: 40px; vertical-align: middle;"> Authenticate with the key.</p>
 				<button id="authenticate-btn" onClick='location.href="/start_authentication?username="' class="btn">Authenticate</button>
 			</div>
 		</div>
@@ -73,6 +73,11 @@
 	    		$('#authenticate-btn').removeAttr('disabled');
 	    		$('#register-text').css('color','#006633');
 	    		$('#register-icon').css('color','#006633');
+	    	}	    	
+	    	if(localStorage.getItem('authenticated') === true){
+	    		// User authenticated!	    		
+	    		$('#authenticated-text').css('color','#006633');
+	    		$('#authenticated-icon').css('color','#006633');
 	    	}
 	    }
 	    else {
@@ -103,12 +108,18 @@
 	  		console.log(name);
 	  		$('#name').html(name);
 	  		if(localStorage.getItem('registered') === null){
+	  			// User is not registered
 	    		$('#authenticate-btn').attr('disabled','disabled');
 	    	}
 	    	else {
 	    		$('#authenticate-btn').removeAttr('disabled');
 	    		$('#register-text').css('color','#006633');
 	    		$('#register-icon').css('color','#006633');
+	    	}
+	    	if(localStorage.getItem('authenticated') === true){
+	    		// User authenticated!	    		
+	    		$('#authenticated-text').css('color','#006633');
+	    		$('#authenticated-icon').css('color','#006633');
 	    	}
 	  	}
 	  	else {
@@ -122,6 +133,7 @@
 		localStorage.removeItem('username');
 		localStorage.removeItem('name');
 		localStorage.removeItem('registered');
+		localStorage.removeItem('authenticated');
 		$('#login').show();
 		$('#u2f-div').hide();
 
