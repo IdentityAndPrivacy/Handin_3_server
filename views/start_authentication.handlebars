@@ -33,16 +33,16 @@
 						$("#start-auth").hide();
 						$("#finish-auth").show();
 						localStorage.setItem('authenticated', true);						
-						$('#data-output').html("<p style='color: darkgrey; font-size: 22px; margin-top:0;'>"+
+						$('#data-output').html("<p style='color: darkgrey; font-size: 22px; margin: 0 0 0 0;'>"+
 												"Data received from Yubico key</p>"+
 												"<br><b>keyHandle:</b><br>"+JSON.stringify(res.keyHandle)+
 												"<br><b>clientData:</b><br>"+JSON.stringify(res.clientData)+
 												"<br><b>signatureData:</b><br>"+JSON.stringify(res.signatureData)+
-												"<p style='color: darkgrey; font-size: 22px; margin-top:0;'>"+
+												"<p style='color: darkgrey; font-size: 22px; margin:0 0 0 0;'>"+
 												"Data received from server</p>"+
 												"<br><b>publicKey:</b><br>"+JSON.stringify(response.publicKey)+
-												"<br><b>counter:</b><br>"+JSON.stringify(response.checkres.counter)+
-												"<br><b>successful:</b><br>"+JSON.stringify(response.checkres.successful)
+												"<br><b>counter:</b><br>"+response.checkres.counter+
+												"<br><b>successful:</b><br>"+response.checkres.successful
 												);
 					}
 					else {
