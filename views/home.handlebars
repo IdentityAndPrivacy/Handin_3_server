@@ -67,12 +67,12 @@
 	    	$('#login').hide();
 	    	// Registered or not?
 	    	if(localStorage.getItem('registered') === null){
-	    		$('#authenticate-btn').attr('disabled','disabled');
-	    		$('#register-text').css('color','#006633');
-	    		$('#register-icon').css('color','#006633');
+	    		$('#authenticate-btn').attr('disabled','disabled');	    		
 	    	}
 	    	else {
 	    		$('#authenticate-btn').removeAttr('disabled');
+	    		$('#register-text').css('color','#006633');
+	    		$('#register-icon').css('color','#006633');
 	    	}
 	    }
 	    else {
@@ -107,6 +107,8 @@
 	    	}
 	    	else {
 	    		$('#authenticate-btn').removeAttr('disabled');
+	    		$('#register-text').css('color','#006633');
+	    		$('#register-icon').css('color','#006633');
 	    	}
 	  	}
 	  	else {
