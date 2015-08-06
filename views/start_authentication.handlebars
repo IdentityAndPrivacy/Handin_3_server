@@ -32,9 +32,9 @@
 						// Success
 						$("#start-auth").hide();
 						$("#finish-auth").show();
-						localStorage.setItem('authenticated', true);
-						$('#data-output').html("<p style='color: darkgrey; font-size: 22px; margin-top:0;''>"+
-												"Data received from Yubico key by client<br>"+
+						localStorage.setItem('authenticated', true);						
+						$('#data-output').html("<p style='color: darkgrey; font-size: 22px; margin-top:0;'>"+
+												"Data received from Yubico key by client</p>"+
 												"<br><b>keyHandle:</b><br>"+JSON.stringify(res.keyHandle)+
 												"<br><b>clientData:</b><br>"+JSON.stringify(res.clientData)+
 												"<br><b>signatureData:</b><br>"+JSON.stringify(res.signatureData)+
