@@ -32,8 +32,8 @@
 		<br/>
 		<div class="row center-align">
 			<div class="col s6">
-				<i class="material-icons" style="color: darkgrey; font-size: 40px; margin-bottom: 0px;">looks_one</i>
-				<p style="margin-top: 0; color: darkgrey; font-size: 25px; line-heigth: 40px; vertical-align: middle;"> Register the yubico key.</p>
+				<i id="register-icon" class="material-icons" style="color: darkgrey; font-size: 40px; margin-bottom: 0px;">looks_one</i>
+				<p id="register-text" style="margin-top: 0; color: darkgrey; font-size: 25px; line-heigth: 40px; vertical-align: middle;"> Register the yubico key.</p>
 				<a href="/start_registration"><button class="btn">Register</button></a>
 			</div>
 
@@ -67,10 +67,12 @@
 	    	$('#login').hide();
 	    	// Registered or not?
 	    	if(localStorage.getItem('registered') === null){
-	    		$('#authenticate-btn').attr('disabled','disabled');
+	    		$('#authenticate-btn').attr('disabled','disabled');	    		
 	    	}
 	    	else {
 	    		$('#authenticate-btn').removeAttr('disabled');
+	    		$('#register-text').css('color','#006633');
+	    		$('#register-icon').css('color','#006633');
 	    	}
 	    }
 	    else {
@@ -105,6 +107,8 @@
 	    	}
 	    	else {
 	    		$('#authenticate-btn').removeAttr('disabled');
+	    		$('#register-text').css('color','#006633');
+	    		$('#register-icon').css('color','#006633');
 	    	}
 	  	}
 	  	else {
