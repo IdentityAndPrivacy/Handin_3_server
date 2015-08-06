@@ -42,7 +42,8 @@
 												"Data received from server</p>"+
 												"<br><b>publicKey:</b><br>"+JSON.stringify(response.publicKey)+
 												"<br><b>counter:</b><br>"+response.checkres.counter+
-												"<br><b>successful:</b><br>"+response.checkres.successful
+												"<br><b>successful:</b><br>"+response.checkres.successful+
+												"<br><b>userPresent:</b><br>"+response.checkres.userPresent
 												);
 					}
 					else {
@@ -96,7 +97,7 @@
 
 	<div id="start-auth" class="container">
 		<i class="material-icons" style="color: darkgrey; font-size: 40px; margin-bottom: 0px; margin-top:40px;">looks_one</i>
-		<p style="color: darkgrey; font-size: 25px; margin-top:0;">Please insert and touch your Yubico key for authentication...</p>
+		<p style="color: darkgrey; font-size: 25px; margin-top:0;">Please insert and touch your Yubico-key for authentication...</p>
 		<br/>
 		<img src='/images/fido.png' width=300 class="fido">
 		<img id="finger-img" src='/images/finger.png' class="finger">
